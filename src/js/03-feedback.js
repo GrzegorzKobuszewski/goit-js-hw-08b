@@ -21,7 +21,7 @@ function checkData() {
         e.preventDefault();
         userEmail.value = JSON.parse(localStorage.getItem(localStorage_Key)).email;
         userMessage.value = JSON.parse(localStorage.getItem(localStorage_Key)).message;
-        console.log(`email: ${userEmail.value},\nmessage: ${userMessage.value}`);
+        console.log(`email: ${form.elements.email.value},\nmessage: ${form.elements.message.value}`);
         e.currentTarget.reset();
         localStorage.removeItem(localStorage_Key);
     }
