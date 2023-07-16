@@ -16,6 +16,20 @@ function saveDataInLS() {
 
 form.addEventListener("submit", checkData);
 
+function checkData(e) {
+    e.preventDefault();
+    const { elements: { email, message }, } = e.currentTarget;
+    console.log({ email: email.value, message: message.value});
+    /* poprzednia wersja odesłana od mentora
+    userEmail.value = JSON.parse(localStorage.getItem(localStorage_Key)).email;
+    userMessage.value = JSON.parse(localStorage.getItem(localStorage_Key)).message;
+    console.log(`email: ${form.elements.email.value},\nmessage: ${form.elements.message.value}`);
+    */
+    e.currentTarget.reset();
+    localStorage.removeItem(localStorage_Key);
+};
+
+/* poprzednia wersja odesłana od mentora - błednie napisana
 function checkData() {
     e => {
         e.preventDefault();
@@ -26,6 +40,7 @@ function checkData() {
         localStorage.removeItem(localStorage_Key);
     }
 };
+*/
 
 const storageData = storage.load(localStorage_Key);
 
